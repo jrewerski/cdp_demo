@@ -12,6 +12,8 @@ persist_with: cdp_demo_default_datagroup
 
 explore: orders {}
 
+explore: customer_orders {}
+
 explore: customers {
   join: orders {
     type: left_outer
