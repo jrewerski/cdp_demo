@@ -10,12 +10,12 @@ datagroup: cdp_demo_default_datagroup {
 
 persist_with: cdp_demo_default_datagroup
 
-explore: orders {
-  join: customers {
+explore: orders {}
+
+explore: customers {
+  join: orders {
     type: left_outer
     sql_on:  ${orders.id} = ${customers.id}  ;;
     relationship: many_to_one
   }
 }
-
-explore: customers {}
