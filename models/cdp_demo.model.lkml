@@ -10,14 +10,12 @@ datagroup: cdp_demo_default_datagroup {
 
 persist_with: cdp_demo_default_datagroup
 
-explore: orders {}
-
-explore: customers {}
-
-explore: orders2 {
-  join: orders2__product {
-    view_label: "Orders2: Product"
-    sql: LEFT JOIN UNNEST(${orders2.product}) as orders2__product ;;
-    relationship: one_to_many
+explore: orders {
+  join: customers {
+    type: left_outer
+    sql_on:  ${orders.id} = ${customers.id}  ;;
+    relationship: many_to_one
   }
 }
+
+explore: customers {}

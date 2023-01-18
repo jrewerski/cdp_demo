@@ -9,7 +9,7 @@ view: orders {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: f0_ {
+  dimension: product {
     type: string
     sql: ${TABLE}.f0_ ;;
   }
