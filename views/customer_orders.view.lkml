@@ -38,7 +38,7 @@ view: customer_orders {
     sql: ${TABLE}.email ;;
   }
 
-  dimension: names {
+  dimension: ordered_items {
     type: string
     sql: ${TABLE}.names ;;
   }
@@ -50,7 +50,7 @@ view: customer_orders {
       last_name,
       country,
       email,
-      names
+      ordered_items
     ]
   }
 }
